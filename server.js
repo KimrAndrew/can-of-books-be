@@ -5,6 +5,9 @@ const express = require('express');
 const cors = require('cors');
 
 const mongoose = require('mongoose');
+
+const Book = require('./Models/bookModel.js');
+
 mongoose.connect(process.env.DB_URL, {useNewUrlParser: true, useUnifiedTopology: true});
 
 const db = mongoose.connection;
