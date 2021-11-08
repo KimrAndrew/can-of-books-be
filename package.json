@@ -1,7 +1,7 @@
 {
   "name": "auth0TestBack",
   "version": "1.0.0",
-  "description": "",
+  "description": "Can of Books",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,8 +11,18 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.24.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
-    "express": "^4.17.1"
-  }
+    "express": "^4.17.1",
+    "mongoose": "^6.0.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KimrAndrew/can-of-books-be.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KimrAndrew/can-of-books-be/issues"
+  },
+  "homepage": "https://github.com/KimrAndrew/can-of-books-be#readme"
 }
