@@ -35,11 +35,14 @@ async function handleGetBooks(req,res) {
   try {
     let books = await Book.find(queryObj);
     if (books) {
+      console.log(books);
       res.status(200).send(books);
     } else {
+      console.log('no books found');
       res.status(404).send('No books found');
     }
   } catch (error) {
+    console.log('');
     console.error(error);
     res.status(500).send('Internal Server Error');
   }
