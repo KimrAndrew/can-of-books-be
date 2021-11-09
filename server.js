@@ -19,10 +19,12 @@ db.once('open', function() {
 
 const app = express();
 app.use(cors());
+app.use(express.json());
 
 const PORT = process.env.PORT || 3001;
 
 app.get('/books', handleGetBooks);
+app.post('/books', handlePostBooks);
 app.get('/test', (request, response) => {
 
   response.send('test request received')
@@ -44,6 +46,15 @@ async function handleGetBooks(req,res) {
   } catch (error) {
     console.log('');
     console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
+}
+
+async function handlePostBooks(req,res) {
+  try {
+    let newBook = await Book.create(req.body);
+    res.status(201).send(newBook);
+  } catch (err) {
     res.status(500).send('Internal Server Error');
   }
 }
