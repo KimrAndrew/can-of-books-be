@@ -31,7 +31,7 @@ app.get('/test', (request, response) => {
 
 async function handleGetBooks(req,res) {
   let queryObj = {email: req.query.email};
-
+  console.log('getting books...');
   try {
     let books = await Book.find(queryObj);
     if (books) {
