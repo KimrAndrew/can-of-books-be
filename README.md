@@ -32,6 +32,11 @@ Technologies used:
 | 1 | Book Component | 02:00 | 00:00 PM | 00:00 PM | 00:00 |
 | 2 | Storage | 03:00 | 00:00 PM | 00:00 PM | 00:00 |
 
+| Feature # | Feature Name | Estimated Time | Start Time | End Time | Total Time |
+| 1 | Create | 02:00 | 1:30 PM | 3:00 PM | 1:30 |
+| 2 | Delete | 02:00 | 3:00 | 5:58 | 3:00 |
+
+
 ## Credit and Collaborations
 
 ### Team Agreement
