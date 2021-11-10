@@ -31,6 +31,7 @@ app.get('/test', (request, response) => {
   response.send('test request received')
 
 })
+app.put('/books/:id',handlePutBooks);
 
 async function handleGetBooks(req,res) {
   let queryObj = {email: req.query.email};
@@ -73,6 +74,18 @@ async function handleDeleteBook(req, res) {
     }
   }else{
     res.status(404).send('Not deleted: Book not found')
+  }
+}
+
+async function handlePutBooks(req,res) {
+  const id = req.params.id;
+  const newBook = {...req.body, email:req.query.email};
+  try {
+    let updatedBook = await Book.findByIdAndUpdate(id, newBook, {new: true,overwrite: true});
+    res.status(200).send(updatedBook)
+  } catch(err) {
+    res.status(500).send('server error');
+    console.error(err);
   }
 }
 
