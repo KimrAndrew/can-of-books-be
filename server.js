@@ -7,6 +7,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 
 const Book = require('./Models/bookModel.js');
+const verifyUser = require('./auth.js');
 
 mongoose.connect(process.env.DB_URL, {useNewUrlParser: true, useUnifiedTopology: true});
 
@@ -27,8 +28,13 @@ app.get('/books', handleGetBooks);
 app.post('/books', handlePostBooks);
 app.delete('/books/:id', handleDeleteBook);
 app.get('/test', (request, response) => {
-
-  response.send('test request received')
+  verifyUser(request, (error, user) =>{
+    if(error){
+      response.send('invalid token');
+    }else{
+      response.send('test request received and validated');
+    }
+  })
 
 })
 app.put('/books/:id',handlePutBooks);
