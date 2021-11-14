@@ -22,4 +22,4 @@ function verifyUser(request, errOrUserCallback){
   }
 }
 
-module.export = verifyUser;
+module.exports = verifyUser;
